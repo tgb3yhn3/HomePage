@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"
+      integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+      integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+      crossorigin="anonymous"></script>
+
+    <title>首頁</title>
+    <style>
+      .card-text{
+        background-color: #c7d4f2;
+        border-radius: 10px;
+        border: 1px;
+      }
+      body{
+        transform:scale(2);
+      }
+      .row:not(.card)      {
+        background-color: white;
+      }
+      #titleRow,button{
+background-color: white;
+      }
+      #under-line{
+        text-decoration:underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container text-center" style=" margin-top:15em;">
+    
+      <div class="row align-items-center">
+        <div class="col">
+          &nbsp;
+        </div>
+        <div class="col">
+          <div class="card col" style="width: 18rem;">
+            <!-- <div class="card-body"></div> -->
+            <div class="container text-center">
+              <input type="month" id="monselector" name="start">
+              <div class="row" id="titleRow">
+                <div class="col">
+                  <button id="last"><</button>
+                  </div>
+                  <div class="col">
+                    <span class="col-lg-8" id="title">Card title</span>
+                  </div>
+                  <div class="col">
+                    <button id="next">></button>
+                  </div>
+                </div>
+              </div>
+      
+              <table>
+                <thead>
+                  <th>Sun</th>
+                  <th>Mon</th>
+                  <th>Tue</th>
+                  <th>Wed</th>
+                  <th>Thr</th>
+                  <th>Fri</th>
+                  <th>Sat</th>
+      
+                </thead>
+                <tbody style="text-align:center;" id="contain">
+      
+                </tbody>
+              </table>
+      
+              <p class="card-text" id="showEvent">Some quick example text to build on
+                the card title and make up the bulk of the card's content.</p>
+              <div class="input-group mb-3">
+                <input id="eventInput" type="text" class="form-control"
+                  placeholder="input event" aria-label="Recipient's username"
+                  aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button onclick="setDateEvent()" class="btn btn-outline-secondary"
+                    type="button" id="button-addon2">儲存</button>
+                </div>
+              </div>
+      
+            </div>
+        </div>
+        <div class="col">
+          <!-- <table>
+            <tr>
+              <td><a><button>Ntou uMail</button></a></td>
+              <td><a><button>iCloud Mail</button></a></td>
+            </tr>
+            <tr>
+              <td><a><button>Facebook</button></a></td>
+              <td><a><button>Instagram</button></a></td>
+            </tr>
+            <tr>
+              <td><a><button>Youtube</button></a></td>
+              <td><a><button>Google News</button></a></td>
+            </tr>
+          </table> -->
+          
+            <table style="width: 100%;height:10em;">
+              <tr>
+                <td >
+                  <a style="decoration:none;" href="https://mail.ntou.edu.tw"><button style="width: 100%;height: 100%;"type="button" class="btn btn-outline-secondary">Ntou Mail</button></a>
+                </td>
+                <td>
+                  <a href="https://www.icloud.com/mail/"><button style="width: 100%;height: 100%;"type="button" class="btn btn-outline-secondary">iCloud Mail</button></a>
+             
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://Facebook.com"><button style="width: 100%;height: 100%;" type="button" class="btn btn-outline-secondary">Facebook</button></a>
+               
+                </td>
+                <td>
+                  <a href="https://youtube.com"><button style="width: 100%;height: 100%;"type="button" class="btn btn-outline-secondary">Youtube</button></a>
+               
+                </td>
+              </tr>
+            </table>
+              <div class="btn-group me-2" role="group" aria-label="First group">
+                
+                 </div>
+              <div class="btn-group me-2" role="group" aria-label="First group">
+             
+              </div>
+            
+
+              
+            
+          </div>
+
+        
+        <div class="col">
+          &nbsp;
+        </div>
+      </div>
+     
+    </div>
+
+ 
+     
+      <!-- <button onclick=genCelender()>Generate</button> -->
+    </body>
+
+
+
+
+    <!-- 脆皮雞排 要辣要切 胡椒 雞蛋豆腐 小辣 紅茶 -->
+    <script src="main.js"></script>
+    <script>
+    let nowSelectID=null
+    let lastSelectID=null
+    var tempDay=new Date()
+    let monselector=document.getElementById("monselector")
+    monselector.value=tempDay.getFullYear()+"-"+((tempDay.getMonth()+1)<10?'0'+String(tempDay.getMonth()+1):String(tempDay.getMonth()+1))
+    monselector.addEventListener("change",()=>genCelender())
+    document.getElementById("last").addEventListener("click",()=>{monselector.stepDown();genCelender()})
+    document.getElementById("next").addEventListener("click",()=>{monselector.stepUp();genCelender()})
+    bigSmallMonth=[31,28,31,30,31,30,31,31,30,31,30,31]
+    
+    genCelender()
+    
+  </script>
+    <script>
+      var scrollFunc = function(e) {
+           var e = e || window.event;
+           if(e.wheelDelta) {   
+                 if(e.wheelDelta > 0) {     //当鼠标滚轮向上滚动时
+                      // alert("鼠标滚轮向上滚动");
+                      window.location="https://mail.ntou.edu.tw"
+                 }
+                 if(e.wheelDelta < 0) {     //当鼠标滚轮向下滚动时
+                  window.location="https://www.youtube.com"
+                      // alert("鼠标滚轮向下滚动");
+                 }
+           } else if(e.detail) {
+                 if(e.detail < 0) {   //当鼠标滚轮向上滚动时
+                      // alert("鼠标滚轮向上滚动");
+                      window.location="https://mail.ntou.edu.tw"
+                 }
+                 if(e.detail > 0) {   //当鼠标滚轮向下滚动时
+                  window.location="https://www.youtube.com"
+                      // alert("鼠标滚轮向下滚动");
+                 }
+           }
+      }
+      //    给页面绑定鼠标滚轮事件,针对火狐的非标准事件 
+      window.addEventListener("DOMMouseScroll", scrollFunc)
+      //    给页面绑定鼠标滚轮事件，针对Google，mousewheel非标准事件已被弃用，请使用 wheel事件代替
+      window.addEventListener("wheel", scrollFunc)
+      //    ie不支持wheel事件，若一定要兼容，可使用mousewheel
+      window.addEventListener("mousewheel", scrollFunc)
+ </script>
+  </html>
